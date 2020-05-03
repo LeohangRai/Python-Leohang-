@@ -1,0 +1,151 @@
+6e10
+
+e means power.
+
+
+list + [dfjklf,dfjklfjd]
+
+and 
+list.append('dfjkf')
+
+These are different
+
+Using + means concatenation.
+So, it will make a new copy of the list.
+
+
+append() will add to the original list
+
+
+
+When we use built in functions like append, no copy is created
+When we use concatenation, the new copy is created.
+
+
+l1 = l1 + [4]
+Then the original list goes to garbage collector.
+The id of the new list(copy) is different
+
+l1 = l2
+
+l1 is l2 > True
+Same id. same memory address
+
+If we use built in functions to l1, like append or extend,
+Both the l1 and l2 are affected
+
+If we use concatenation:
+l1 = l1+[9]
+THe id of l1 changes
+this is like adding 2 different objs
+
+So l2 is not affected.
+
+
+
+#In place manipulation of objs
+If obj.method() is called, the obj is changed,
+It is called 'in place' 
+
+
+
+Break and Continue
+Break - Exits the loop
+Continue - Skips the loop for specified  iteration
+
+for-else:
+the else part gets executed only if the break statement doesn't get executed
+
+
+
+
+DIctrionaries:
+
+
+dict.keys()
+dict.values()
+dict.item()
+
+
+
+#IMP:
+Keys must be immutable and unique
+It is unordered
+
+Looping through all elements of dict:
+for k, v in action_values.items():
+
+
+Alias
+
+
+#Lambda expressions:
+- anonymous functions
+- the fn is assigend to a var
+
+NOTE:
+Lambda exp to check whether the given num is even or not
+is_even = lambda x: x%2 == 0
+
+
+Two types of function:
+1. returns a value (maps a value to some other value)
+2. returns a boolean value (filters)
+
+Example:
+times2 = lambda x: x*2
+is_even = lambda x: x%2 ==0
+
+
+#map()
+
+map(f, l)
+
+f--> function
+l --> list
+
+Applies the function to the given list
+Other container can be used as well.
+
+The function can be a defined function or an anonymous fn (Lambdas) both
+
+The return value is not a list so we type cast as:
+list(map(f,l))
+
+
+#filter()
+filters the values
+returns only the cases which are True
+
+
+sir, euta function ley certain type(container type) ko matra argument liney banauna milxa?
+
+
+#List Comprehension
+- combines all of the above
+
+[square(x) for x in range(100) if x%2 == 0]
+
+
+The square(x) is the map()
+The if x%2==0 is the filter
+
+map--- generator--- filter
+
+
+
+[(i,j) for i in range(1,10)
+for j in range(1,10)
+if i%j == 0]
+
+
+
+SET:
+Just like list but non repeating
+undordered list of unique 
+
+
+
+Types:
+set - mutable
+frozen set - immutable

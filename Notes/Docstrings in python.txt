@@ -1,0 +1,10 @@
+Docstrings are used to describe what a function does.
+Docstrings are enclosed in triple quotes
+
+Python looks for the docstrings when it generates documentation for the functions in your programs.
+
+Example:
+
+def greet_user():
+	"""Display a simple greeting"""
+	print("Hello!")

@@ -1,0 +1,213 @@
+How to see what methods/attributes are available to a particular obj:
+pass the obj into the dir() function:
+
+Example:
+nums=[1,2,3]
+print(dir(nums)) 
+>returns the methods and attributes available for list obj
+
+
+#Iterable:
+Any Python object capable of returning its members one at a time, permitting it to be iterated over in a for-loop.
+Something that can be looped over. Example: list, tuple, dictionaries, strings, files, generators.
+
+An iterator has the potential of giving us an iterator by using the __iter__ method.
+
+It is also possible to have an iterable that “generates” each one of its members upon iteration - meaning that 
+it doesn’t ever store all of its members in memory at once. Generators are a special type of iterator, and are
+very useful for writing efficient code.
+
+Technical definition:
+An iterable is any Python object with an __iter__() method or with a __getitem__() method that implements 
+Sequence semantics.
+
+How to know if sth is iterable?
+If an obj has the __iter__ method, then it can be looped over
+What the for loop does in the background is, it calls the __iter__ function on our obj that
+returns an iterator(of the obj) to loop over.
+
+Since, list has the __iter__ function, it is called iterable.
+But it is not an iterator.
+NOTE: If we run the __iter__ method on the list, it will return an iterator
+
+#How to convert an iterable into an iterator?
+1. Either directly run the __iter__ method on it.
+2. Pass the iterable obj into the iter() function
+
+Example:
+nums= [1,3,4]
+i_nums = nums.__iter__()   #This is what the for loop does on the bg
+
+OR
+nums= [1,3,4]
+i_nums = iter(nums)
+
+--->If we look at the methods available for this i_nums obj, by using the dir() function:
+     we will see that it now has the __next__ along with __iter__ method available.
+
+
+#Iterator:
+An iterator is an object with a state so that it knows where it is during iteration. 
+[The state is basically, current = self.value] 
+And they also know how to get their next value.
+They get their next value using the dunder method __next__
+And when the last item is reached, StopIteration error is raised
+
+
+An iterator is also an iterable but the difference is that the __iter__ method in iterator
+returns the same obj, it just returns self.
+
+Note: Iterator can only go forward by calling the __next__ method.
+
+We can see that the list obj doesn't have the __next__ method as an attrib.
+Means, it doesn't have a state and doesn't know how to get the next value.
+Therefore, it is not an iterator.
+
+If we try to print the next() of a list, we get a TypeError saying
+"TypeError: 'list' obj is not an iterator"
+Example":
+lis=[1,2,3]
+print(next(lis))
+
+>TypeError: 'list' object is not an iterator
+
+
+Note: When we pass an obj to the next() funtion, it runs the dunder __next__ method on the
+background.
+Note: When we pass an obj to the iter() function, it runs the dunder __iter__ method on the bg
+
+
+
+#Iterator(contd.)
+Since an iterator obj has the __next__ method, we should be able to get the next value from it.
+Iterator obj has a state so that it remembers where it is during iteration.
+So if we run next on the same obj, it should remember where it left off  and return the value.
+
+Example:
+nums= [1,3,4]
+i_nums = iter(nums)
+
+print(next(i_nums))		>1
+print(next(i_nums))		>3
+print(next(i_nums))		>4
+
+print(next(i_nums))		>StopIteration
+
+StopIteration means that the iterator is exhausted and has no more values.
+
+
+#How For loop works:
+Note: For Loop does the same thing and handles the StopIteration exception.
+So in the bg, the for loop is basically doing the following things:
+1. It first gets the iterator of our obj  (By calling the __iter__ function on the  obj)  [Ex: i_nums = iter(nums)]
+2. Then it gets the next values (By calling the __next__  function) [Ex: next(i_nums)]
+	Until it hits the StopIteration exception
+3. next values are returned using while loop
+
+#Creating the for loop
+nums = [1,3,5]
+i_nums = (iter(nums))
+while True:
+    try:
+        item = next(i_nums)
+        print(item)
+    except StopIteration:
+        break
+
+
+#Significance of knowing all these stuffs?
+We can add these methods to our own classes and make them iterable as well.
+
+
+#Creating our own Iterator
+Let's create a class that acts as the built in range() funtion.
+
+#Creating our own class that behaves like the range() function 
+Unlike range() function which is a Generator, this class will be an iterator though.
+And also, this custom class' object will also have the __next__  function.
+
+class MyRange:
+    def __init__(self,start,end):
+        self.value = start
+        self.end = end
+        
+    def __iter__(self):  #returns the self obj as an iterator
+        return self
+    
+    def __next__(self):   
+        if self.value >= self.end:
+            raise StopIteration
+            
+        current = self.value      #Iterator should remember its state
+        self.value += 1
+        return current
+
+#Test
+nums = MyRange(1,5)
+print(next(nums))		>1
+print(next(nums))		>2
+print(next(nums))		>3
+print(next(nums))		>4
+
+> 1 \n 2 \n 3 \n 4 \n 5
+
+We can also run for loop in this as:
+for num in nums:
+    print(num)
+The output will be the same.
+
+Now, this will behave as a range() function that can take start and stop int.
+Note: We can see that there are both __iter__ and __next__ dunder methods in this class..It is because an iterator 
+	needs to have both of these. 
+
+
+#Generator:
+Generator are extremely useful to create easy-to-read iterators.
+Instead of returning a result, they instead yield a value.
+When they yield a value, they store the state until the generator is run again and yields the next value.
+
+Generators are iterators as well but the dunder iter and next methods are created automatically(in built, I guess).
+
+Let's create a Generator function that acts exactly the same as our range() function.  
+The generator function works exactly the same the class we created above and is more readable.
+
+#Creating a generator function:
+def my_range(start,end):
+    current = start
+    while current < end:
+        yield current
+        current+=1
+
+#Test
+nums = my_range(1,11)
+print(next(nums))
+print(next(nums))
+print(next(nums))
+print(next(nums))........10 times
+
+> This will print from 1 to 10
+
+Can use the for loop as well.
+
+
+
+#Importance of Iterator:
+It fetches 1 value at a time.
+This comes really handy while writing memory efficient programs.
+Because there are so many values in a list or tuple that we cannot hold them all in the memory.
+But if we use an iterator, we can access 1 value at a time.
+
+
+
+#Summary:
+#Iterable:
+It can be looped over. The obj needs to return an iterator obj from its dunder __iter__ method.
+And the iterator returned from the dunder iter method must define a dunder __next__ method.
+This __next__ method accesses elements in the container one at a time.
+So, just because sth is iterable doesn't mean it is an iterator.
+
+#Iterator:
+It's an obj with an state so that it remembers where it is at, during it's iteration.
+And it knows how to fetch it's next value usin the __next__ method.
+When there is no next value, it raises a StopIteration exception.
+		

@@ -1,0 +1,28 @@
+if else
+By using comparisons (Logical operators)
+< 
+>
+==
+<=
+>=
+!=
+
+and 
+or 
+not
+
+
+if condition:
+	statement
+elif condition:
+	statement
+else:
+	statement
+
+
+Ternary Operator:
+condtion_true if condition else condition_false
+
+Example:
+canVote = True if age>=18 else False
+

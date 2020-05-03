@@ -1,0 +1,18 @@
+a = np.arra([[][]])
+
+np.linalg.det(a)  #Gives determinant
+
+
+
+np.linalg.inv(a) #Gives the inverse
+
+
+MAtrxi multiplicaiton
+
+
+
+
+np.linalg.solve(A,C)  Solves the linear equation
+
+
+"Mean square error:"

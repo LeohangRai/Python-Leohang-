@@ -1,0 +1,26 @@
+
+Membership operators
+
+Membership Operators in Python are used to validate whether a value is present in a sequence 
+(or if substring is present in a string). There are two membership operators in Python. They are very simple.
+
+1. in – This operator returns True if the value is found in sequence.
+
+2. not in – This operator returns True if the value is NOT found in sequence.
+
+# Testing memberships in a List 
+
+letters = ['a', 'b', 'c', 'd', 'e']
+print('a' in letters) 		# Checking if the letter 'a' is IN the list
+>True
+
+
+print('g' not in letters)  	# Checking if the letters 'g' is NOT IN the list
+>True
+
+
+# Testing memberships in a string
+word = 'photosynthesis'
+print('photo' in word) # Checking if the substring 'photo' is in the string
+>True
+

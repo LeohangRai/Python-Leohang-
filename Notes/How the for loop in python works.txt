@@ -1,0 +1,21 @@
+#How For loop works:
+Note: For Loop does the same thing and handles the StopIteration exception.
+So in the bg, the for loop is basically doing the following things:
+1. It first gets the iterator of our obj  (By calling the __iter__ function on the  obj)  [Ex: i_nums = iter(nums)]
+2. Then it gets the next values (By calling the __next__  function) [Ex: next(i_nums)]
+	Until it hits the StopIteration exception
+3. next values are returned using while loop
+
+#Creating the for loop
+nums = [1,3,5]
+i_nums = (iter(nums))
+while True:
+    try:
+        item = next(i_nums)
+        print(item)
+    except StopIteration:
+        break
+
+
+Note: The for loop doesn't directly iterate on the container. It first converts the 
+container into an iterator.

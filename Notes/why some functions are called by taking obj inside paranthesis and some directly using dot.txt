@@ -1,0 +1,22 @@
+
+If the function is defined inside the class of that obj
+i.e. if the obj has that function as attribute
+Then we can call the function as 
+obj.functionName()
+
+But if the function is from some other class,
+functionName(obj)
+
+
+Example:
+For the obj of list class
+
+Let's say the functions to be applied are min() and insert()
+
+min() cannot be applied as listobj.min()  #This will throw an attriute error
+It can be called as min(listobj)
+
+insert() can be applied though as listobj.insert()
+
+
+This is because, list class has insert() function inside it, but not min(). 

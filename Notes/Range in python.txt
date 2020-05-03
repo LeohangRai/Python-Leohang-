@@ -1,0 +1,115 @@
+Range, List and Tuple: 
+-Sequential data structures
+-Elements can be accessed only in a predetermined/ordered way
+
+Range:
+range()
+-returns a sequence of numbers between specified start and stop numbers with specified increment(step)
+(By default the step is 1)
+(By default the start is 0)
+
+Syntax:
+range(start,stop,step) 
+The arguments must all be integers (+ve, -ve both)
+No strings or float value 
+Start and step are optional (Single argument means the stop and it will start from 0 by default)
+
+Examples:
+Using only 1 arg in range()
+for I in range(5):
+	print(i, end=” ”)
+>0 1 2 3 4
+
+Using only 2 arguments() i.e. start and stop
+for I in range(5,10):
+	print(i, end =“ ”)
+> 5 6 7 8 9
+
+Using all 3 arguments:
+for I in range(1,10,2):
+	print(i, end = “ ”)
+>1 3 5 7 9
+
+
+Decrementing using range():
+The value of step should be -ve
+
+Example:
+for i in range(40,1,-2):
+	print(i)
+
+
+#Reversing a range() output:
+Two ways:
+1. By using a -ve step value as above
+2. By using the reversed() function
+
+Example:
+for i in reversed(range(1,6)):
+    print(i, end=' ')
+>5 4 3 2 1 
+
+
+#Creating patterns using range and For loop
+Note:
+The first loop is for the num of rows
+The second(nested) loop is for columns
+
+#Number Triangle using range and for loop:
+for i in range(4):
+    for j in range(i):
+        print(i, end = ' ')
+    print()
+
+>1 
+ 2 2  
+ 3 3 3 
+
+How this works:
+when I = 0, range(i)= Null  
+when I = 1, range(i)= 0       		>Print i(1) once with end = ‘ ’
+when I = 2, range(i)=0,1 		>Print i(2) twice with end = ‘ ’
+when I =3, range(i) =0,1,2 		>Print i(3) thrice with end = ‘ ’
+The print() at the end is for \n after each j interation
+
+#Triangular half pyramid
+Number of rows is given
+Number of columns is equal to the num in each row
+
+for rows in range(1,6):
+	for column in range(1,rows+1):
+		print(column)
+	print()
+
+
+
+#How to make range() inclusive?
+
+range() is exclusive, i.e. it doesn't include the last number in the output, the stop integer
+We can make stop inclusive by doing:
+stop += step    #stop = stop +step
+
+Example:
+start = 1
+stop  = 5 
+step  = 1
+stop +=step #now stop is 6
+
+for i in range(start, stop, step):
+    print(i, end=', ')
+>1, 2, 3, 4, 5,
+
+
+#Converting range into a list:
+use the list() command:
+
+lis = list(range(1,6))
+print(lis)
+>[1, 2, 3, 4, 5]
+
+
+#Accessing python list items by using range() by the index number iteration:
+lis = ['a', 'b', 'c', 'd', 'e']
+for item in range(len(lis)):
+    print("List item: "+lis[item])
+

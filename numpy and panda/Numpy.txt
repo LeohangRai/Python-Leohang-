@@ -1,0 +1,96 @@
+#Numpy
+A module/library in python for scientific computing.
+It provides high-performance multidimensional array object
+and tools for working with these arrays.
+
+-enables performing complex mathematical operations on them including support for linear algebra, 
+fourier transformation and random number generation.
+
+
+Numpy can be used as an efficient multi-dimenstional container for generic data.
+
+
+Why Numpy insteaad of list:
+1. Less memory
+2. Faster
+3. Convenient
+
+
+Numpy Operations:
+1. Find the dimension of the array  --> arr_name.ndim
+2. FInd the byte size of each element  --> arr_name.itemsize (will return in bytes	)
+3. Find the data types of the elements  --> arr_name.dtype
+4. Find the size of an array (Total number of elements)  ---> arr_name.size
+5. Find the shape of an array (Total number of rows and columns)   --> arr_name.shape
+
+
+Other operations:
+6. Reshaping arrays --> changing the rows and columns
+7. Slicing arrays --> same like list slicing (Nested list slicing)
+
+Also, while slicing, it is possible to simultaneously index the nested elements of 2 or more rows.
+Example:
+ 
+arr = np.array([(1,2,3,4),(4,5,6,8)])
+#Print statement to return the 3rd index value in each row
+print(arr[0:, 3])
+
+> [4 8]
+
+
+
+#NOTE:
+For creating arrays
+Creating arrays filled with one(same) element:
+
+Imp_Note:
+1. only 1 number specifies the columns   (can be specified as just a number or inside paranthesis)
+The paranthesis can be either () or [] 
+
+2. Two numbers specifiy the row and column (must be specified inside a bracket)
+The paranthesis can be either () or [] 
+
+3. Three numbers specify the dimension, row and columns
+The paranthesis can be either () or [] 
+
+
+
+#Creating arrays filled with one(same) element:
+
+Example:
+#Creating a array with 1 row filled with multiple(10) 4's
+np.full(10, 4)
+Or np.full( [10], 4 )
+Or np.full( (10), 4 )
+
+#Creating a 3X3 array filled with 4
+np.full( [3,3], 4 )
+
+#Creating a 3X2 array filled with 4
+np.full( [3,2], 4 )
+
+#Creating a 3 dimenstional 3X2 array filled with 4
+np.full( [3,3,2], 4 )
+
+
+
+
+#Creating arrays filled with ones or zeros:
+
+#Creaing array filled with one single row and multiple(20) 0's or 1's
+np.zeros(20, dtype='int32')   #For 0's
+np.ones(20, dtype='int32')   #For 1's
+
+#Creating 2X3 array filled with 0's or 1's
+np.zeros( [2,3], dtype = 'int32')  #For 0's
+np.ones([2,3], dtype = 'int32')  # for 1's
+
+
+#Creating 3 dimensional 2X3 array filled with 0's or 1's
+np.zeros( [3,2,3], dtype = 'int32' )
+np.zeros( [3,2,3]. dtype = 'int32' )
+
+
+#Creating arrays using random elemenst
+	 
+

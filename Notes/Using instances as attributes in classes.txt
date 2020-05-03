@@ -1,0 +1,30 @@
+Let's say we have a class Car and another class Battery.
+Then we can use the instance of Battery class as an attribute in the car class.
+
+Example:
+#Creating a Car that will have Battery class instance as an attribute.
+
+class Battery():
+    def __init__(self, size = 70):
+        self.size = size
+        
+    def desc_battery(self):
+        print("This car has a "+str(self.size)+" KWh battery")
+ 
+
+class Car():
+    def __init__(self, company, model):
+        self.company = company
+        self.model = model
+        self.battery = Battery()  #This is the instance of Battery class initiailized with default value.
+        
+my_car = Car('Tesla','LEO')
+my_car.battery.desc_battery()
+
+>This car has a 70 KWh battery
+
+
+NOTE:
+To access the attributes/methods of the instance(Battery) through the Car object, we need to acess them as:
+car_obj.battery_obj.attribute_name
+car_obj.battery_obj.method_name

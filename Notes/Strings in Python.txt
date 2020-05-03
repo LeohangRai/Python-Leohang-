@@ -1,0 +1,191 @@
+#Strings:
+Single or Double quotes, both can be used and also triple quote.
+Triple quote can be used to declare multiline string.
+
+
+Strings are immutable sequence data type, this means that each time one makes any changes to string, 
+instead of modifying the existing string data, a new string object is created.
+
+
+Subsets of strings can be taken using the slice operator ([ ] and [:])
+with indexes the string using index 0 for the first character of the string.
+
+Escape Sequences in strings:
+\'  For using single quote
+\"  For using double quote
+\t  For using tab
+\\  For using back-slash
+\n  For new line
+
+
+Another alternative, if you want to use single quotes and double quotes in a string is to use
+Triple quotes like:
+
+str1 = ''' Triple "quoted" 'this' '''
+
+The triple quote can also be used for multi line string
+
+
+TypeCasting:
+int()
+str()  
+
+
+Working on Strings:
+
+#raw strings:
+These strings ignore the escape sequences like \n, \', \t, etc.
+
+print(r"I'll be ignored \n")
+> I'll be ignored \n
+
+Even \n is printed, i.e it has been ignored as a keyword.
+
+#Concatenation (Joining Strings):
+Use the + sign
+print("Hello"+"World")
+>HelloWorld
+
+#Format the output with f string
+int1 = 5
+int2 = 5
+print(f'{int1}+{int2}={int1+int2}')
+>5+5 = 10
+
+
+#Length of the string:
+len(strname)
+
+#Indexing:
+strname[indexnum]
+
+strname[0]   #returns the first character of the string
+print("1st", strname[0])  #prints the first char of the string
+print("Last", strname[-1]) #prints the last char of the string
+
+Slicing:
+strname[start:stop:step]
+
+Imp:
+You can't change any index value of a string.
+strname[0]="a"  # this will throw a TypeError 
+
+
+However, you can replace the characters of a string by the following methods:
+
+Replacing the parts string:
+strname = strname.replace("Original value of either the whole some parts", "New value for that part")
+
+Example:
+str3 = "Hello world"
+str3 = str3.replace("Hello","Goodbye") 
+print(str3)
+>Goodbye World
+
+
+
+Also it is possible to change the characters of a string by slicing:
+
+str3 = "Hello world"
+str3 = str3[0:8] + "W" +str3[9:] #Slicing the string into "Hello " and "orld" and adding "W" in between
+print(str3)
+>Hello World    
+
+
+Checking whether a string is in a String:
+use the 'in' keyword
+It will return either True or False boolean value
+
+The negation can be done by 'not in'
+
+Example:
+str3 = "Hello world"
+print("Hello" in str3)
+>True
+
+print("hello" in str3)
+>False
+
+
+#Trim white space from a string
+strip()    #Strip from both left and right
+lstrip()   #Strip from both left 
+rstrip()   #Strip from the right
+
+
+Examples:
+print("   Hello  ".strip()) 
+>Hello
+
+print("   Hello  ".lstrip())
+>Hello
+
+print("   Hello  ".rstrip())  
+>    Hello
+
+#Changing case in a String
+str.title()  - makes the first char of every word on the string capital (After each space) 
+str.lower()
+str.upper()
+
+Examples:
+name = "ada Lovelace" 
+print(name.title())		>print(name.title())
+print(name.upper()) 	>ADA LOVELACE  
+print(name.lower())	>ada lovelace
+
+	
+
+#Converting a list into a string
+use the join() function
+Syntax: " ".join()    #Note: the "" should come before join(), always
+The "" argument specifies how to concatenate the elements of a list as a string.
+what to add between the elements.
+
+Example:
+li = ["Some", "random","words"]
+print(" ".join(li))  #Join the elements of a list into a single string separated by a single space
+> Some random words
+
+print("-".join(li)) #Joins the elements of a list into a single string separated by a hyphen
+>Some-random-words
+
+print("_".join(li))
+>Some_random_words
+
+#Note: This code actually joins the elements to the right and left side of whatever is given in ""
+
+
+#Converting a string into a list
+Use the split() function
+split(" ") as default
+
+split(",") splits the string wherever there is a , in the string
+split("") is not acceptable, "" should not be empty. However split() is acceptable
+ 
+Examples:
+str4="This is a string"
+print(str4.split(" ")) # " " means, split the string whenever there is a single space. 
+>['This', 'is', 'a', 'string']
+
+
+str2 = "This, is, another string"
+print(str2.split(",")) #splits the string wherever there is a comma.
+>['This', ' is', ' another string']
+
+
+#Checking whether a string is a character or a number:
+isalnum()  #Checks whether it is either or both alphabet and num
+isalpha()  #Checks whether everything is a char
+isdigit()  #Checks whether whether everything is a digit
+
+
+Examples:
+
+print("AString123".isalnum())  	:True 
+print("AString".isalpha())		:True
+print("1234".isdigit())		:True
+
+print("A String 123".isalnum())	:False	
+print("A String".isalpha())   		:False
+print("A String".isdigit())		:False

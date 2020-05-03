@@ -1,0 +1,156 @@
+Dictionaries:
+- consists of a collection of key-value pairs
+- allows to store and retrieve elements by referencing a unique key
+- dictionaries have very fast look up time in python
+
+Dictinaries have the following properties:
+-unordered, mutable and indexed
+
+#Similarities with List:
+- mutable
+- dynamic. can grow and shrink as needed
+- can be nested
+
+#Difference from list:
+- list elements are accessed by their position in the list (via indexing)
+- dict elements are accessed via keys
+
+
+Defining a dictionary in python:
+- use the curly braces
+- key:value pairs are separated by commas
+- key and value are separated by a colon :
+
+dictname = {key:value, key:value}
+
+NOTE:We can also construct a dictionary with the dict() function. (Given down below)
+NOTE: The value can be strings, integers, lists, tuples and other objects.
+NOTE: If the same key is used more than once, the latter one is stored.
+
+Examples:
+d = {}  # an empty dictionary
+print(d)
+>{}
+
+
+d = {'Matt': 'New York'}  # a dictionary with one key-value pair
+print(d)
+>{'Matt': 'New York'}
+ 
+d = {
+    'tom':'Cat',	#a dictionary with multiple key-value pair
+    'Jery':'Mouse',
+    'Spike':'Dog'
+}
+print(d)
+>{'tom': 'Cat', 'Jery': 'Mouse', 'Spike': 'Dog'}
+
+NOTE: If the same key is used more than once, the latter one is stored.
+Example:
+mydict = {'A':1,'B':2,'C':3,'D':4,'D':5}   #  'D':4 is overriden
+print(myd ict)
+{'A': 1, 'B': 2, 'C': 3, 'D': 5}   
+
+
+#Defining a dictionary with the dict() function
+- takes keyword arguments. can take as many as you like, separated by comma like key = value, key = value ...
+- the argument to dict() should be a sequence of key-value pairs
+- a list of tuples, works best
+
+creating an empty dictionary:
+mydi = dict()
+
+creating a dictionary using keyword arguments:
+mydi = dict(
+
+)
+
+NOTE: I tried doing this in Jupyter Notebook, but it didn't work. Says dict obj no callable or sth.
+So I'll try them[dict() functionality] later.
+
+#Accessing values in dictionaries
+dict[key]
+
+Example:
+d = {'Tom':'Cat',
+     'Jerrry':'Mouse',
+     'Spike':'Dog'}
+
+print(d['Spike'])
+>Dog
+
+#Accessing all keys and values of a dictionaries:
+dictname.keys()  ---> returns all the keys of the dict
+dictname.values() ----> returns all the values of the dict
+
+Example:
+mydict = {'A':1,'B':2,'C':3,'D':4}
+print(dict.keys())	>dict_keys(['A', 'B', 'C', 'D'])
+print(dict.values())	>dict_values([1, 2, 3, 4])
+
+
+
+#Printing the keys of a dictionary with new line in each item:
+- Use the * keyword and sep = '\n'
+
+mydict = {
+    'A':{1:'Shizen',2:'Leo'},
+    'B':'Just a string',
+    ('tup','le'):['L','I','S','T']
+}
+print(*mydict,sep='\n')
+
+>A
+B
+('tup', 'le')	
+
+#Adding elements to a dictionary:
+There are multiple ways of doing this.
+1. dictname[Key] = ‘Value’
+
+
+#Membership operator for dictionaries:
+To determine if a specific key is present in  a dictionary, we use the "in" keyword.
+It doesn't work for checking values though.
+
+print("Tom" in d)  	> True    
+print("Cat" in d)	>False  (because there is no key named "Cat" in the dict d.)
+
+
+
+
+#Restriction on keys:
+-only immutable data types can be used as key in dictionaries. (i.e. we cannot use list or dict itself as a key)
+It will throw a TypeError
+>TypeError: unhashable type: 'list'
+
+Example:
+d = {[1, 1]: 'a', [2,2]: 'b'}
+>TypeError: unhashable type: 'list'
+
+To be more specific/technical, the obj should be hashable to be elgible for being a key in dict.
+Hashable means any obj that can be passed into the built-in hash() function in python.
+-Every data type we've learned so far except list and dictionaries are hashable.
+-For simplicity(only for understanding), we can think of immutable and hashables as synonyms.
+
+
+#Restrictions on values
+Python provides no restrictions on dictionary values. 
+We can put any datatype as a value in a dictionary.
+	
+Example:
+mydict = {'A':{1:'Leo',2:'Shizen'},
+          'B':'Just a string',
+          ('tup','le'):['L','I','S','T']
+         }
+print(*mydict,sep='\n')
+
+>A
+B
+('tup', 'le')
+
+
+
+
+#Iterating over a dictionary
+We can loop over a dictionary by using the for loop.

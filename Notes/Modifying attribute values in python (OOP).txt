@@ -1,0 +1,50 @@
+Modifying attribute values (OOP):
+There are 3 ways to do this:
+1. Change the value directly through an instance
+2. Set the value through a method
+3. Increment the value through a method
+
+Let's say we have a code for a car class:
+
+
+
+1. Moadifying an Attribute's value directly (Through an instance)
+Trick -->
+Create an obj of the class
+To change:
+obj.attribute = new_value
+
+
+2. Modifying an attribute's value through a method:
+Trick:
+Create a method 
+The parameter of the method should be --> The variable (value) that you want to assign to the attribute
+
+Example:
+def update_odometer(self, mileage):
+        """Set the odometer reading to the given value"""
+        self.odometer_reading = mileage
+
+3. Incrementing an attribute’s Value through a Method
+Sometimes we may have to increment/decrement an attribute's valeu by certain amt rather tahn set an entirely 
+new value.
+
+Trick:
+Create a method
+The paramter may take the amt of incrementation or not.
+
+If the attribute is to be incremeted/decremented by a fixed amount only (in every case)
+(for example, always by 10), then we may not need to pass it as arg in the method call.
+
+If the attribute is to be incremented/decremented by an amt specified by the method caller
+(for example, if the odometer reading is to be modified by the miles specified by the user), then we pass
+the miles as arg in the method.
+
+Example:
+def increment_odometer(self, miles):
+        """Set the odometer reading to the given value"""
+        self.odometer_reading += miles
+
+
+
+

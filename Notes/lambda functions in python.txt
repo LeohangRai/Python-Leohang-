@@ -1,0 +1,9 @@
+A lambda is an anonymous function that:
+
+    Must be defined inline
+    Doesn’t have a name
+    Can’t contain statements
+    Will execute just like a function
+
+Example:
+myfunc=lambda x: x[::-1]

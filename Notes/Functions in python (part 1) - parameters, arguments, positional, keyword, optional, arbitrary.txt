@@ -1,0 +1,101 @@
+Functions in python:
+
+Syntax:
+def fn_name(parameters):
+	statements
+
+
+- The small bracket () is for the paranthesis
+- The significance of paranthesis is to specify what kind of info(obj) the function needs to do its job
+- Even if no info is required, we have to give the paranthesis
+
+To use any function, we have to call it.
+A function call tells the python interpreter to execute the code in the function.
+
+
+#Passing info to a function
+def greet_user(username):
+	print("Hello " + username.title())
+greet_user('Leo')
+
+
+#Arguments vs Parameters
+parameter is passed during function definition
+argument is passed during function call
+
+In the above example, the argument 'Leo' was passed to the function greet_user() and the value was stored 
+in the parameter 'username'
+
+#Passing arguments:
+We can pass arguments in the function in a number of ways.
+1. Positional arguments: the arguments need to be in the same order the parameters were written
+
+2. Keyword arguments:  name-value pair
+each argument consists of a variable name and a value; list and dictionaries of values
+(arg1=value1, arg2 = value2)
+
+
+1. Positional Arguments
+- the order in which arguments are passed matters
+- python matches each arg in the fn call with the parameter in the fn definition
+
+Example:
+def descr_pets(animal_type, pet_name):
+    print("I have a "+ animal_type)
+    print("My"+animal_type+"'s name is "+pet_name.title()+".")
+describe_pet('hamster', 'harry')
+
+>I have a hamster
+My hamster's name is Harry.
+
+In the above example, during fn definition we have said that the fn requires an animal_type and pet_name
+to work. So we have to pass those arguments in the same order.
+
+If we pass arguments into the above fn like:
+describe_pet('Harry', 'Hamster')
+
+We will get a result like this:
+>I have a Harry
+My harry's name is Hamster.
+
+Hence, the order of arguments matters in positional arguments.
+
+
+2. Keyword Arguments
+- name-value pair
+- we explicitly tell python which paramater each argument should be matched with
+- we directly associate the name and the value withing the argument
+- so the ordering doesn't matter
+- thwe role of each value(arguement) is already clarified in the function call
+
+Example: Using the same fn that we defined above
+describe_pet(animal_type = 'hamster', pet_name = 'harry')
+
+Here, we explicitly tell python which parameter each argument should be matched with.
+So, it know to store the argument 'hamster' in the parameter animal_type
+and the argument 'harry' in pet_name
+
+The order of the keyword arguments doesn't matter here.
+describe_pet(pet_name = 'harry', animal_type = 'hamster')
+
+>This will give the same result as above.
+
+
+NOTE: While using keyword arguments, be sure to use the exact names of the parameters as in the function's
+definition.
+This is the disadvantage of keyword arguments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

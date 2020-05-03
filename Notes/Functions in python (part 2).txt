@@ -1,0 +1,128 @@
+Functions in python (Part 2)
+
+Default values
+- While defining a function, we can also define a default value for each parameter.
+- During fn call, if the arg for that param is provided, python uses that argument value
+- If not, then it uses the parameter's default value
+
+The significance of setting default values for parameters is that, they can be set based on "what argument is
+likely to be passed most often while calling the function"
+
+Example:
+Let's say that, most of the time, the above function describe_pet() is  called by passing dog as the animal_type,
+then we can set the default value of anima_type to 'dog'.
+
+def describe_pet(pet_name, animal_type = 'dog')
+    print("I have a "+ animal_type)
+    print("My"+animal_type+"'s name is "+pet_name.title()+".") 
+
+describe_pet('pet_name = 'Willie')
+OR
+describe_pet('Willie')
+
+>I have a dog
+My dog's name is Willie.
+
+
+
+NOTE:  (Very Important)
+- The parameters with default values need to be listed after all the parameters that don't have default values.
+- This allows python to continue interpreting positional arguments correctly.
+
+
+- The parameters without any default value can still be interpreted as positional argument.
+- And their order matters
+
+
+If an explicit argument for animal_type is provided, the default value will be overriden.
+
+Example:
+describe_pet('harry','hamster')
+>I have a hamster
+My hamster's name is Harry.
+
+
+
+#Equivalent function calls:
+Since positional arguments, keyword arguments and default values can all be used together,
+often we will have several equivalent ways to call a function.
+
+
+Example:
+def describe_pet(pet_name, animal_type = 'dog'):
+    print("I have a "+animal_type+".")
+    print("My "+animal_type+"'s name is "+pet_name.title()+".")
+
+For this function, 
+- an argument always needs to be provided for pet_name.
+- the argument for animal_type is optional. 'dog' by default
+- the argument for pet_name can be provided using positional as well as keyword format
+- argument for animal_type to override the default value can also be provided using both positional 
+   as well as keyword format
+
+
+#Equivalent Function calls for the above function.
+
+#A dog named Willie
+describe_pet('Willie')
+describe_pet(pet_name = ''Willie')
+describe_pet(animal_type = 'dog', pet_ name = 'Willie')
+describe_pet(pet_ name = 'Willie', animal_type = 'dog')
+
+#A hamster named Harry
+describe_pet('harry', 'hamster')
+describe_pet(pet_name='harry', animal_type = 'hamster')
+describe_pet(animal_type = 'hamster', pet_name = 'harry')
+
+
+
+#Making an Argument Optional
+- We can make an argument optional by setting the default value of the parameter to None or Empty.
+
+- Making an argument optional may be handy while defining function where some arguments may not be very 
+essential. i.e. when some info may be optional.
+
+#Example of non-optional argument:
+Look at the following fn:
+def get_full_name(fname, midname, lname)
+    full_name = fname + ' ' + midname + ' ' + lname
+   return fullname.title()
+
+musician = get_full_name('Leo', 'Hang', 'Rai')
+print(musician)
+>Leo Hang Rai
+
+But every user may not have a middlename, and this fn won't work if we only provide the fname and lname.
+To make the middle name optional, we can give the 'midname' parameter an empty value as default.
+Also, we will have to move the parameter 'midname' to the back of the parameters list.
+
+
+#Example of Optional argument:
+Look at the following fn:
+
+def get_full_name(fname, lname, midname = '')
+   if middle_name:    #python interprets non-empty string as True
+        full_name = fname + ' ' + midname + ' ' + lname
+   else:
+        full_name = fname + ' ' + lname
+    
+   return fullname.title()
+
+musician = get_full_name('Leo', 'Rai')
+print(musician)
+>Leo Rai
+
+We can also pass the midname arg as:
+musician = get_full_name('Leo','Rai','Hang')
+print(musician)
+>Leo Hang Rai
+
+
+
+
+
+
+
+
+
+

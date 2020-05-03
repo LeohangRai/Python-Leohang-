@@ -1,0 +1,18 @@
+DataFrame: a 2 or morre dimensional data structure (array). Basically a table with rows and columns. The columns have names and rows have indices.
+
+- heterogeneous data
+- size mutable
+ - data mutable
+ - can perform Arithmetic operations on rows and columns
+
+#Syntax:
+pandas.DataFrame( data, index, columns, dtype, copy)
+
+data - takes various forms of data like ndarray, series, map, lists, dict, constants and also another Dataframe.
+index - the index to be used for the resulting frame. Default: np.arrange(n)
+columns - for column labels. Default: np.arrange(n)
+
+dtype - data type of each column
+copy - for copying data. Default: False
+
+

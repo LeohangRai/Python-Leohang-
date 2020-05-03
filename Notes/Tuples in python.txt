@@ -1,0 +1,90 @@
+Typles in python:
+A tuple can be referred to as an immutable list. (meaning its items cannot change)
+
+A tuple looks exactly like a list except we use parantheses instead of square brackets.
+A tuple is also sequential.
+A tuple can also store non-homogenious data. (like lists)
+A tuple is also iterable
+A tuple can be nested just like a list. Like  (('a','b'),(1,2))
+A tuple can have elements of multiple data types like ('q', 100, 300, '1', 'f')
+
+NOTE: The main difference between the a list and tuple is that lists are mutable whereas tuples are immutable. 
+
+#Accessing the individual elements of a tuple
+We can access the individual elements of a tuple by using item's index.
+(Just like for a list)
+
+Example:
+tup = (10,20)
+print(tup[0])	>10
+print(tup[1])	>20
+
+
+If we try to change the value of any item in the tuple, it will throw a TypeError
+tup[0] = 33
+
+>TypeError: 'tuple' obj does not support item assignment
+
+NOTE: A practical example of the use of tuple can be when we have to store the permanent values like:
+the dimensions of a rectangle which shouldn't change. 
+dimensions = (50,10)
+
+
+#Creating tuples: [IMPORTANT]
+A tuple is created by placing the collection of items within the round brackets( ), 
+but that is not always necessary.
+
+1. with round brackets
+letters = ('a', 'b', 'c', 'd', 'e')
+print(letters)
+>('a', 'b', 'c', 'd', 'e')
+
+2. without round brackets 
+letters = 'a', 'b', 'c', 'd', 'e'
+print(letters)
+>('a', 'b', 'c', 'd', 'e')
+
+#Creating tuple with a single element:
+Note: There must be a trailing comma. (Comma at the end)
+
+1. with round brackets
+tup1 = ('a',)
+print(tup1)
+>('a',)
+
+2. without round brackets
+tup2='a',
+print(tup2)
+>('a',)
+
+
+#Looping through the values in a Tuple:
+Since a tuple is also an iterable obj, we can loop over all the values in a tuple using a for loop, just like
+we did with a list.
+
+Example:
+tup = (100,200)
+for t in tup:
+     print(t, end = " ")
+
+>100 200
+
+
+#Writing over a tuple: (Or redifining the whole tuple)
+We can't modify a tuple but we can assign a completely new tuple to the variable that holds the tuple.
+i.e. we can redifine the whole tuple.
+
+Example:
+tup = (200,50)
+tup = (400,100)   # redifines the whole tuple
+
+tup = (200,50)
+print(tup)		>(200, 50)
+
+tup = (400,100)
+print(tup)		>[400,100]
+
+tup = ('q',100, 300, '1','f')
+print(tup)		>('q', 100, 300, '1', 'f')
+
+

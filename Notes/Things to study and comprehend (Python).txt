@@ -1,0 +1,25 @@
+Python bytecode generation
+Python Virtual machine
+
+Comprehension
+
+Hash() function
+Hashables in python
+* with list and dictionary
+
+sort() vs sorted()
+key in sort and sorted
+
+
+
+How reversing [::-1] works
+
+What objs can be passed into the iter() function?
+Any or just the iterables?
+
+How to make functions take only 1 kind of data/obj as an arg?
+Like only integers
+or only strings
+
+
+Dunder/Magic methods in python

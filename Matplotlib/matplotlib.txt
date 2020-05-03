@@ -1,0 +1,39 @@
+Matplotlib is one of the most popular Python packages used for data visualization.
+It is a cross platform library for making 2D plots from data un arrays.
+
+It provides an object-oriented API that helps in embedding plots in applications using Python GUI toolkits such as
+PyQt, WxPythonotTkinter
+Matplotlib makes use of Numpy.
+
+
+Matplotlib has a procedural interface named the Pylab, which is designed to resemble MATLAB, a proprietary 
+programming language developed by MathWorks. 
+Matplotlib along with NumPy can be considered as the open source equivalent of MATLAB.
+
+Pyplot and PyLab are some of the modules in the matplotlib package.
+
+
+Basice plot:
+from matplotlib import pyplot as plt
+
+import numpy as np
+
+import math
+
+x = np.arange(0,2*math.pi, 0.05)
+y = np.sin(x)
+
+plt.plot(x,y)  #Setting the x and y axes values for the plot
+plt.xlabel("angle")  #Setting the label for the x axis
+plt.ylabel("sine")  #Setting the label for the y axis
+plt.title("Sine wave")  #Setting the title of the plot
+plt.show()
+
+
+#PyLab
+PyLab is a convenience module that bulk imports matplotlib.pyplot (for plotting) and NumPy (for Mathematics
+and working with arrays) in a single name space. 
+
+Although many examples use PyLab, it is no longer recommended.
+
+

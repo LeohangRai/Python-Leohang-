@@ -1,0 +1,58 @@
+
+1. To begin with, we create a figure instance which provides an empty canvas.
+fig = plt.figure()
+
+2. Now add axes to figure. 
+The add_axes() method requires a list object of 4 elements. 
+
+ax=fig.add_axes([0,0,1,1])
+
+Corresponding to left, bottom, width and height of the figure. 
+Each number must be between 0 and 1
+
+
+3. Set labels for x and y axis as well as title:
+ax.set_title("sine wave")
+ax.set_xlabel('angle')
+ax.set_ylabel('sine')
+
+4. Invoke the plot() method of the axes object.
+ax.plot(x,y)
+
+
+
+
+#Example:
+
+from matplotlib import pyplot as plt
+
+import numpy as np
+
+import math
+
+#Creating the x and y axis values
+x = np.arange(0, 2*math.pi, 0.05)
+y = np.sin(x)
+
+fig = plt.figure() #Creating the figure object
+
+ax = fig.add_axes([0,0,1,1])  #Left, bottom, width and height of the axes
+ax.plot(x,y)
+ax.set_xlabel('angel')
+ax.set_ylabel('sine')
+ax.set_title('Sine wave')
+
+plt.show()
+
+
+
+
+1. Figure class
+The matplotlib.figure module contains the Figure class. 
+It is a top-level container for all plot elements. 
+The Figure object is instantiated by calling the figure() function from the pyplot module.
+
+
+
+2. Axes class
+

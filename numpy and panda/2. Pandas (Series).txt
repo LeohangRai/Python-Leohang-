@@ -1,0 +1,116 @@
+Panda Series:
+a 1D data structure (1D ndarray) that can store values.
+And for every value it holds a unique index.
+- homogeneous array
+- size immutable
+- values of data mutable
+
+
+Syntax:
+panda.Series
+
+panda.Series(data, index, dtype, copy)
+
+data -  takes various forms of data like ndarray (array), list, constants
+index - index values must be unique and hashable, same length as data
+             Default: np.arrange(n)
+dtype - data type
+copy - copy data (Default False)
+
+
+A series can be created using various inputs like:
+Array, dict, list, scalar value (constant)
+
+
+#Creating an Empty Series:
+import pandas as pd
+s = pd.Series()
+print(s)
+
+>Series([], dtype: float64)
+
+
+#Creating a series from ndarray
+import numpy as np
+import pandas as pd
+
+data = np.array(['a','b','c','d'])  
+s = pd.Series(data)  #Without providing index
+s2 = pd.Series(data, index = ['001','002','003','005']) #With user specified index
+
+
+
+#Creating a series from dict
+data = {'a' : 0.092, 'b' : 1.343, 'c' : 'hello'}
+s = pd.Series(data)
+print(s)
+
+Output:
+a 0.0
+b 1.0
+c 2.0
+dtype: float64
+
+
+--> Dictionary keys are used to construct index.
+
+
+Another Example:
+data = {'a' : 0., 'b' : 1., 'c' : 2.}
+s = pd.Series(data,index=['b','c','d','a'])
+print(s)
+
+Output:
+b 1.0
+c 2.0
+d NaN
+a 0.0
+dtype: float64
+
+
+-->Index order is persisted and the missing element is filled with NaN (not a number).
+--> Also, if you provide any other index rather than the keys in the dictionary, it will return a series with
+NaN for each key that is not in the dictionary.
+
+Example:
+data = {'a' : 0.092, 'b' : 1.343, 'c' : 'hello'}
+s = pd.Series(data, index = ['100','200'])
+print(s)
+
+Output:
+100    NaN
+200    NaN
+dtype: object
+
+
+#Creating a Series from Scalar (constant)
+If data is a scalar value, an index must be provided. The value will be repeated to match the length of index.
+
+Example:
+s = pd.Series(5, index = [0,1,2,3])
+s2 = pd.Series(5)   #If index is not defined, the value will be stored only once
+
+print(s, end = '\n\n')
+print(s2)
+
+Output:
+0    5
+1    5
+2    5
+3    5
+dtype: int64
+
+0    5
+dtype: int64
+
+
+
+
+
+
+
+
+
+
+
+

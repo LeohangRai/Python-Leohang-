@@ -1,0 +1,53 @@
+Functions in python (Part 3)
+
+#Return values
+ - the value the function returns is called a return value
+ - the return statement takes a value from inside a function and sends it back to the line that called the function.
+ -  a function may return a value or a set of values
+ - a fn can return any kind of value (even complicated data stuctures like lists and dicts)
+
+#Returning a simple value
+Example:
+A fn that takes a first name and last name and returns the full name.
+
+def get_full_name(fname,lname):
+   full_name = fname + ' ' + lname
+   return full_name.title()
+
+musician = get_full_name('Jimi,'Hendrix'')
+print(musician)
+>Jimi Hendrix
+
+NOTE: When we call a function that returns a value, we need to provide a variable where the return value can
+be stored.
+In the above example, the return value is stored in the variable 'musician'.
+
+
+#Returning a Dictionary
+Example:
+def person_name(fname, lname):
+      person = {'first':fname, 'last' :lname}   #We can also directly return {'first':fname, 'last':lname} without storing in a variable
+      return person
+
+musician = person_name('Jimi','Hendrix')
+print(musician)
+>{'first':'Jimi', 'last':'Hendrix'}
+
+
+The above fn takes in 2 arguments and packs them into a dictionary.
+
+#Making the above fn accept optional values (We can add middle name, age , occupation, etc. for example)
+def person_name(fname, lname, age='')
+     person = {'first':fname, 'last':lname}
+     
+    if age:
+            person['age'] = age
+    return person
+
+musician = person_name('Jimi', 'Hendrix', 27)
+print(musician)
+> {'first':'Jimi', 'last':'Hendrix', age:27}
+
+In this example, we added a new parameter 'age' to the fn and set it's default value to empty string.
+This makes the arg for age optional in this function.
+

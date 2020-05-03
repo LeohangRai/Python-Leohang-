@@ -1,0 +1,61 @@
+Implicit index (0,1,2,...)
+Explicit Index (Customized index)
+
+
+After going into a dataframe each column becomes/acts as 
+
+
+To index columns:
+give keys
+
+
+To index rows:
+
+
+
+
+
+DF[column]
+
+DF[row, column]
+
+
+
+DF.describe()
+DF.info()
+DF.unique()
+
+
+
+Filtering
+
+DF[[True,False,True,False]]
+
+s[s>2]
+
+Index are immutable
+
+
+
+Functions:
+isnull()
+notnull()
+fillna()
+dropna()
+
+
+
+#Missing dataset:
+Ways to solve them:
+1. dropna 
+2. fillna
+3. mean
+
+
+We have to specify inplace = True.
+Otherwise, the operation will happen in a copy of the dataframe.
+
+
+
+Example:
+df[]

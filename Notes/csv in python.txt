@@ -1,0 +1,9 @@
+read()   -reads all the chars in the file
+readline() -reads the line, one line at a time 	
+readlines()  - shows all the lines in array form
+
+
+
+csv.writer(filename, delimeter)
+
+delimeter --> how to separate the values

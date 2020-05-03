@@ -1,0 +1,56 @@
+Python variables:
+
+Can put characters, underscore and numbers.
+Can only start with either a character or underscore
+Cannot start with numbers though
+Case Sensitive
+Can start with underscore:
+_343Variable
+Cannot be same as keywords like (try, catch, len)
+All CAPS VARIABLES are usually used to represent variables that don't change
+throughout the script. (Like parameters)
+
+myvariable_324 is acceptable
+
+can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+_24_bars_of_chocolate
+
+
+type(var)-->returns the type of the var
+
+myvar= date(year=2019, month=4, day=1)
+date Data type
+
+
+
+#Multiple values to variables
+num1 = num2 = num3 = 10 # assigns the number 10 to all three variables
+print(num1, num2, num3)
+--->10 10 10
+
+
+a, b, c = 5, 'R', 'S' # assigns different values to each variable
+print(a, b, c)   
+--->5 R S
+
+
+#Data types in Python
+
+    Numbers Data Types (int, float, complex etc)
+    list Data Type
+    tuple Data Type
+    dict Data Type
+    str Data Type
+    set Data Type
+
+
+Note:
+Unlike other languages, Python does not have an explicit long type. In fact, Python's int can store values as large as C's long, 
+and for larger numbers, Python automatically casts numbers into a special type called BigNum. 
+This can store arbitrarily large numbers in it.
+
+
+#Deleting a var or object:
+del num1
+
+

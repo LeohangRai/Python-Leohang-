@@ -1,0 +1,38 @@
+import this ---> shows the Python zen
+
+
+Interpreter languages can run even without a complete file.
+
+
+print? will show the documentation in Jupyter Notebook
+
+
+#Books for Beginners:
+Think python
+Automating the boring stuff
+Python crash course A hands-on, Project-based Intro to Programming, Eric Mathes
+
+Other:
+Learn Python the hard way (Has problems to be solved)
+
+
+
+
+Order of Operatins: PEMDAS
+Paranthesis
+Exponent
+Multiplication and Division
+Addition/Subtraction
+
+Arithmetic Ops:
+
+Exponent **
+Modulus/Remainder %
+/ Produces float
+// produces int
+
+False, None, 0, Empty Container like [], '', "" are False.
+Everything else is true.
+
+
+

@@ -1,0 +1,135 @@
+Generators are special type of iterators.
+
+Generators don't hold the entire result(all the items) in the memory (like containers do). They yield 1 result at a time.
+So if you try to print the result of a generator funtion directly like:
+print(a_generator_fn(input))
+
+You will get an output like:
+<generator obj at memaddr>
+
+
+Alternatively, we can get the results of the generator funtion by using the next() function.
+The next() function runs the __next__ dunder method in the bg.
+
+Example:
+print(next(a_generator_fn(input)))
+This will print the first result.
+On repeating the command, we will get the successive results and eventually a StopIteration exception.	
+
+
+
+NOTE: A generator function has a yield instead of return.
+
+#How the next() method can be called on  a generator just like an iterator?
+This question came into my mind because, in an iterator class we define the __next__ method which makes it possible
+for us to call next() method on any iterator obj.
+
+But since we do not define any __next__ method in a generator, how come we are able to call the next() method
+on a generator obj.
+
+I think the answer is, because in the generator we have called the for loop which runs the __iter__ method on the
+background, due to which the container obj already converts into an iterator.
+Thus we are able to call next() method on the generator obj too.
+
+
+Example:
+
+Let's create a function that takes a list of integers and returns their squares.
+
+Note: There's an alternative list comprehension example for this function as well down below.
+
+1.A non-generator function example:
+def square_nums(num):
+    square=[]
+    for i in num:
+        square.append(i*i)
+    return square
+
+#Test
+print(square_nums([1,2,3,4,5]))
+>[1, 4, 9, 16, 25]
+
+
+
+
+2.A Generator function example:
+def square_nums(num):
+    for i in num:
+        yield (i*i)
+        
+#Test
+lis=square_nums([1,2,3,4,5])
+print(lis)   		><generator object square_nums at 0x7efe840a24d0>
+print(next(lis))	>1
+print(next(lis))	>4
+print(next(lis))	>9
+print(next(lis))	>16
+
+We can run for loop instead:
+for i in lis:
+    print(i)
+
+#The for loop handles the StopIteration exception on its own
+
+
+Imp Note:
+If we run the print next(square_nums([1,2,3,4])) command multiple times, it will always give the same result.
+i.e. the first result of the function.
+
+This is because, each time next(square_nums([1,2,3,4])) command is called, the function runs __iter__ method on the list.
+And the value of 'current'  or sth at __next__ will be overriden into the original(first) value.
+
+So we need to store the square_nums([1,2,3,4]) result in a variable at first.
+
+
+Note: To convert a list comprehension into a generator, just replace the outside [] with ().
+	The variable that stores the generator return value will act as a generator.
+
+Another Example:
+
+List comprehension to store a list of squares of the given list:
+
+square = [(i*i) for i in [1,2,3,4,5]]
+
+#Test
+print(square)		>[1,4,9,16,25]
+
+for i in square:
+    print(i)
+
+>1 2 3 4 5 (With line breaks)
+
+Alternative using Generator:
+
+square = ((i*i) for i in [1,2,3,4,5])
+
+#Test
+print(square) 		>generator object <genexpr> at 0x7efe840a26d0>
+print(next(square))	>1
+print(next(square)) 	>3
+print(next(square))	>5
+
+We can run for loop as well:
+
+for i in square:
+    print(i)
+
+
+#How to obtain all the values from a generator at once?
+Since generator doesn't store all the values into the memory at once, we can only access 1 value of the generator at once.
+
+But we can obtain all of its values by typcasting it into a list as:
+list(generator_variable)
+
+generator_variable ----> a variable that stores the return/yield of a generator function\
+
+Example:
+square = ((i*i) for i in [1,2,3,4,5])
+square = list(square)
+	
+ 
+I think, this means that the result(return) of a list like ['a','b',1,2] is the obj itself.
+But for generators, the obj is the variable that stores the generator, while the result is each iteration.
+
+
+

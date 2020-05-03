@@ -1,0 +1,36 @@
+
+#Memory management in Python w.r.t. variables:
+In Python, the mnemory is assigned to the value rather than the variable.
+The variable acts as an id/tag.
+So if we create a variable 'a=1' and another var 'b=1'.
+Then it will add 2 tags 1 and 2 to the same value 1.
+Therefore, memory is only consumed once.
+
+
+Unlike C, where for every variabele, a container is created with memory allocation and value.
+
+
+we can get the memory address of any variable in python using the fn id().
+print(id(a))
+
+The variable name that we assign in Python is only a reference to a particular value.
+The value rests in a memory location.
+This is the reason why we can assign any value to a variable.
+(The truth is we are assigning a variable(as id) to a value.)
+
+Because, a variable is only an id to refer to a particular value resting in some memory location.
+Hence, a variable can be used to refer to different types of value/data type.
+For instance:
+x=10
+x=Car()
+
+Once x was a reference for an int data type and later it is refering to a Car obj (data type).
+
+The type of the object is assigned only during runtime.
+
+
+#Memory management in Python w.r.t. Objects:
+Python assigns different memory address to objects(instances) even for the same class.
+
+So can a class have only one obj?
+Singleton

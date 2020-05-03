@@ -1,0 +1,36 @@
+
+Printing elements with a separator in between them:
+print(12,21,1974, sep='/')
+> 12/21/1974
+
+Excluding new line after a print:
+print("No newline", end='')
+> Here, if we print, another statement, then it wil be printed in the same line as this statement
+
+
+String Formatting:
+print("%04d %s %.2f %c" % (1, "Derek", 1.234, 'A'))
+>0001 Derek 1.23 A
+
+
+%04d  A decimal with 4 leading 0's 
+%s  A string
+%.2f  A float with 2 decimal places of precision
+%c A character
+
+The sequence of entry in the %() determines in what order the values will be printed.
+  
+
+
+Generating a Random value:
+print("Random", random.randint(1,101))
+>will generate a random integer
+
+random.randint(lower_limit,upper_limit)
+
+inf ----> Infinity
+nan-----> not a number
+
+print(math.inf - math.inf) 
+>nan
+ 

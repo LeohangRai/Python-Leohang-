@@ -1,0 +1,108 @@
+#Passing a list(or any other container) in a function:
+- we can pass a list or any other container into a function as argument(parameter)
+- when we pass a list to a fn, the fn gets access to all the contents of the list
+
+Example:
+A function that takes a list and greets every item(username) in that list.
+
+def greet_users(names):
+    for name in names:
+        print("Hello " + name.title() + "!")
+        
+namelis = ["Shizen", "Leo", "Abhishek", "Raj"]
+greet_users(namelis)
+
+NOTE: If a string is passed instead of list, the fn will loop over the string indices.
+
+
+
+#Modifying a list in a function
+- any changes made to the list inside the function's body are permanent
+- i.e. a function can modify the list
+
+Example (Without implementing in function):
+unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+while unprinted_designs:
+   current_design = unprinted_design.pop()
+   print("Printing model: " + current_design)
+   completed_models.append(current_design)
+
+print("The following models have been printed:")
+for model in complete_models:
+   print(model)
+
+Output:
+Printing model: dodecahedron
+Printing model: robot pendant
+Printing model: iphone case
+
+The following models have been printed:
+dodecahedron
+robot pendant
+iphone case
+
+
+
+NOTE: in the above we see that we have 2 lists. Initially one of them(unprinted_designs) has items and 
+another one(completed_models) is empty.
+We are popping items from the first list using while loop and appending em to the second list.
+We can accomplish this by creating 2 functions such that 1 of them takes the lists and does all the list 
+manipulation/modificationwhile the 2nd one will simply print the current status which have been printed 
+and which are remaining.
+
+
+#Example(With implementation in function):
+def print_models(unprinted_designs, completed_models):
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        
+        print("Printing model: "+ current_design)
+        completed_models.append(current_design)
+        
+def show_completed_models(completed_models):
+    print("\nThe following models have been printed:")
+    for models in completed_models:
+        print(model)
+
+#TEST
+my_unprinted_designs = ['Samsung','Apple','Huawei']
+my_completed_designs = ['Mantra','Sahana']
+print_models(my_unprinted_designs, my_completed_designs)
+print(my_completed_designs)
+print(my_unprinted_designs)
+
+#Output:
+Printing model: Huawei
+Printing model: Apple
+Printing model: Samsung
+['Mantra', 'Sahana', 'Huawei', 'Apple', 'Samsung']
+[]
+
+
+
+
+#Avoiding a function from modifying the list:
+- sometimes we way want to manipulate a list for certain tasks. But it may be required that we don't change
+the original state of the list.
+- We can address this issue by passing the function a copy of the list, rather than the original
+- The changes the fn makes to the list, will only affect the copy, not the original
+
+We can do this by passing a copy of list to a function like:
+ 	fn_name(lisnamep[:])
+
+- The slice notation [:] makes a copy of the list to send to the function.
+If we don't want any change to happen to the unprinted_designs list, then we can call the function like this:
+	print_models(unprinted_designs[:], completed_models)
+
+
+The function will still do the same task, but this time it uses a copy of the original list, not the actual list.
+
+
+
+NOTE: [Important]
+- It's more efficient to pass the original list rather than a copy
+- It will avoid having to use extra time and memory to make the copy, specially when we're woking with large lists
+
+

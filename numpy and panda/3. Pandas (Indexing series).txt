@@ -1,0 +1,66 @@
+#Accessing Data from Series with Position
+- data in the series can be accessed similar to that in an ndarray.
+
+Ways to retrieve data:
+1. Retrieve Data Using Index (Default index)
+2. Retrieve Data Using Label (Index)
+
+
+
+1. Retrieve Data Using Index (Default index)
+
+#Retrieve the first element
+import pandas as pd
+
+s = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+print(s[0])
+
+>1
+
+
+#Retrieve the first three elements in the Series
+s = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e']
+print(s[:3])
+
+Output:
+a    1
+b    2
+c    3
+dtype: int64
+
+
+#Retrieve the last three elements
+s = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+print(s[-3:])
+
+Output:
+c    3
+d    4
+e    5
+dtype: int64
+
+
+2. Retrieve Data Using Label (Index)
+
+#Retrieve a single element using index label value
+
+s = pd.Series([1,2,3,4,5], index = ['a','b','c','d','e'])
+print(s['a'])
+
+>1
+
+#Retrieve multiple elements using a list of index label values
+#Note: List of index should be used
+
+s = pd.Series([1,2,3,4,5], index = ['a','b','c','d','e'])
+print(s[['a','c','e']])
+
+Output:
+a    1
+c    3
+e    5
+dtype: int64
+
+#NOTE: if an unavailable label is indexed, then KeyError will be raised
+
+​

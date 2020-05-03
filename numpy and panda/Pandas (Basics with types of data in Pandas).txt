@@ -1,0 +1,43 @@
+Pandas is an open-source Python Library providing high-performance data manipulation and analysis tool using its powerful data 
+structures.
+The name is derived from form the word Panel Data (an Econometrics from Multidimensional Data).
+
+Using Pandas, we can accomplish five typical steps in the processing and analysis of data 
+-->load, prepare, manipulate, model, and analyze.
+
+#Pandas data structures
+1. Series
+2. DataFrames
+3. Panel 
+
+NOTE: The higher dimensional data structure is a container of its lower dimensional data structure.
+For example, DataFrame is  a container of Series, Panel is a container of DataFrame.
+
+-->These data structures are built on top of Numpy array, which means they are fast.
+
+
+1. Series: a 1D data structure (1D ndarray) that can store values.
+And for every value it holds a unique index.
+- homogeneous array
+- size immutable
+- values of data mutable
+
+2. DataFrame: a 2 or morre dimensional data structure (array).
+Basically a table with rows and columns.
+The columns have names and rows have indices.
+- heterogeneous data
+- size mutable
+- data mutable
+
+
+3. Panel:
+- General 3D labeled, 
+- size-mutable array.
+- data mutable
+
+
+#Mutability
+All Pandas data structures are value mutable (can be changed) and except Series all are size mutable. 
+Series is size immutable.
+
+
