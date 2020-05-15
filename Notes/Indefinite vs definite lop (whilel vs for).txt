@@ -1,0 +1,9 @@
+So up to now we've been talking about indefinite loops,
+and that's the use of the while keyword that just runs
+until some logical condition is false or you hit a break.
+Definite loops are finite.
+They are going over, say,
+all the lines in the file or all the items in a list
+or all the characters in a string or something.
+And for this, we use the "for" construct.
+And it's more predictable

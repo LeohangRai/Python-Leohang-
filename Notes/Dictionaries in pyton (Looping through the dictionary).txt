@@ -1,0 +1,61 @@
+#Important Note:
+if we loop the dict directly   ---> keys are iterated
+if we loop the dict.keys()      ---> keys are iterated
+if we loop the dict.values()   ---> values are iterated
+if we loop the dict.items()    ---> tuples are iterated [tuples of key and value pairs  Example ('Chuck', 1), ('Fred', 42), ('Jan',100)]
+
+#Iterating over a dictionary
+We can loop over a dictionary by using the for loop.
+
+
+#Looping directly (as I like to call it)
+If we loop over the dictionary like:
+for i in dict_name:
+
+The i here will be the iteration variable of the keys in the dictionary.
+
+
+my_dict = {'Chuck': 1, 'Fred': 42, 'Jan': 100}
+for i in my_dict:
+    print(i)
+
+Output:
+Chuck
+Fred
+Jan
+
+
+We can use this to show the values of each keys as well:
+for i in my_dict:
+    print(i, my_dict[i])
+
+Output:
+Chuck 1
+Fred 42
+Jan 100
+
+
+
+#Looping as dict.items()  
+# Tuples of key value pairs are returned by the items() method.
+
+We can check this out by using the fn as:
+my_dict = {'Chuck': 1, 'Fred': 42, 'Jan': 100}
+my_dict.items():
+
+>dict_items([('Chuck', 1), ('Fred', 42), ('Jan', 100)])
+
+This means we will have 2 iteration variables at a time:
+1. The key
+2. The corresponding value
+
+So we can loop through this as:
+for key, value in my_dict.items():
+    print(key, value)
+
+
+We can also loop as:
+#Looping as dict.keys()
+#Looping as dict.values()
+
+They are simple af. You might already get that by now.

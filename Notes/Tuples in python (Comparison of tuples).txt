@@ -1,0 +1,24 @@
+#Comparison of tuples
+
+If we compare 2 tuples, only the first item of each tuple are compared:
+For Example:
+(0,1,2) < (5,1,2)
+> True
+
+Here, the thing that happens is:  0<5
+
+If the first items are same, it looks for the second item and so on.
+Example:
+(0, 1, 2000) < (0, 3, 4)
+> True
+
+This can be taken as 012 and 512:
+If the first digit of first num is less than that of the second 
+it means that the first num is less than the second num as a whole.
+
+
+This can be applied to strings as well.
+('Jones', 'Sally') < ('Jones', 'Sam')
+> True
+
+Because in Sally and Sam, l comes before m.

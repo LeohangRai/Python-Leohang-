@@ -1,0 +1,18 @@
+Sometimes, we may need to know and keep track of the index of the elements inside a list while iterating through them.
+For example, when we have to skip certaind index elements, we need to keep track of the index.
+
+In tha case we cannot use the simple:
+for item in items:
+
+So, we may opt to using:
+index = 0
+while index<len(items):
+
+
+
+>But there's an even more appropriate solution for this:
+for i in range(len(items)):
+    print items[i]
+
+In this way, we can keep track of the index of the elements in the list and manipulate it as well.
+

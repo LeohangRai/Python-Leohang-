@@ -150,7 +150,27 @@ B
 ('tup', 'le')
 
 
+#NOTE  (Typecasting dictionary into a list)
+If we typecast a dictionary into a list, then it will store as the list of the dictionary keys.
+Example:
+my_dict = {'Chuck': 1, 'Fred': 42, 'Jan': 100}
+list(my_dict)
+
+>['Chuck', 'Fred', 'Jan']
 
 
-#Iterating over a dictionary
-We can loop over a dictionary by using the for loop.
+#NOTE:
+dict.keys()
+>returns a list of keys
+
+dict.values()
+> returns a list of values
+
+dict.items()
+> returns a list of tuples
+where the tuples are of key and value each
+
+
+
+
+

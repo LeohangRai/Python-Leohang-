@@ -1,0 +1,49 @@
+You are given a list of names.
+By looking at the list, implement a dictionary such that, the dictionary stores the key as the unique names in 
+the list and values as the frequency of each name (i.e. each key)
+This is like a histogram. Because a histogram shows the frequency of all the available items.
+
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'rayan', 'cwen']
+
+for name in names:
+    if name not in counts:
+        counts[name] = 1
+    else:
+        counts[name] += 1
+counts
+
+> {'csev': 2, 'cwen': 2, 'rayan': 1}
+
+
+#Logic:
+If the name doesn't already appear in the dictionary (as key), it means, the name was found for the first time, 
+so it's count(value) would be set to 1.
+Otherwise, set it to previous number plus 1.
+
+
+#Implementing the same thing using the get function.
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'rayan', 'cwen']
+
+for name in names:
+    counts[name] = counts.get(name, 0) + 1 
+counts    
+
+> {'csev': 2, 'cwen': 2, 'rayan': 1}
+
+
+#Logic:
+Look at what the get method does, if you've forgotten already.
+The get method returns the defaul value that we pass as argument, if the key doesn't exist.
+
+So what we can do here is, we can add
+counts.get(name, 0) + 1
+
+Here, if the name doesn't exist in the dictionary, that it is encountered for the first time, then the get method will return 0.
+So the total count will be 0 + 1 = 1
+
+Otherwise, the get method will return the count value of the name, and it will be incremented with 1 as: count.get(name) + 1
+i.e. previous value + 1
+
+​

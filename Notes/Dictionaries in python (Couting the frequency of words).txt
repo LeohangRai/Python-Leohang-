@@ -1,0 +1,44 @@
+The user will enter a sentence and we have to check the sentence and store the frequency of each word as the value 
+to the word as a key.
+
+#Code Solution:
+
+counts = dict()
+sentence = input("Enter the sentence: ")
+
+try:
+    words = str(sentence).split()    
+except:
+    print("You must enter a valid sentence.")
+    quit()
+
+for word in words:
+    counts[word] = counts.get(word, 0) + 1
+    
+print(counts)
+
+
+#Doing the same thing but on a file
+And also, this time returning the word that has the highest count and its frequency
+
+filename = input("Enter the file name: ")
+handle = open(filename)
+
+count = dict()
+for line in handle:
+    line = line.rstrip()
+    words = line.split()
+    
+    for word in words:
+        count[word] = count.get(word, 0) +1
+
+highest_word = 0
+highest_word_frequency = 0
+
+for key, value in count.items():
+    if value > highest_word_frequency:
+        highest_word_frequency = value
+        highest_word = key
+    
+print(highest_word)
+print(highest_word_frequency)

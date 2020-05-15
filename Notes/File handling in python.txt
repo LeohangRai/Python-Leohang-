@@ -1,0 +1,39 @@
+handle = open('filename', 'mode')
+
+the open statement is called a handler
+
+File handle is not the data, it's just a way to get at the data. It is like a connetor.
+That they're not actually the data, but a thing we can manipulate.
+So, this handle is something that's sort of
+a porthole between your program and this file that's sitting on the disk. 
+
+
+NOTE:
+Just like a string variable is a sequence of characters 
+A handle is a sequence of lines.
+
+Example:
+handle = open('file.txt', r)
+
+for i in handle:
+    print(i)
+
+i will be the iteration variable which carries the lines of the handle.
+
+NOTE: Every line has a \n at the end.
+So if we print(line), we will get an extra linespace.
+It is because, 1 \n is obtained from the end of the line and the other from the print statement's end = '\n'
+
+
+#Program to count the num of lines in a file
+handle = open('hello.txt')
+count = 0
+for i in handle:
+    count+=1
+print(count)
+
+
+
+#read method 
+handle.read() 
+will read the whole file

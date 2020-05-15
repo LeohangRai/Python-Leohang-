@@ -1,0 +1,28 @@
+While looking for the values in a dictionary using the keys, sometimes the key we enter may not exist:
+
+dict_name['key_that_dont_exist']
+
+This will throw a key error.
+
+
+So, to avoid this we can use the get method of the dict() obj.
+dict_name.get('key', default_value)
+
+default value is the value that will be returned if the key doesn't exist in the dictionary.
+
+Example:
+di = {'a':1, 'b':2, 'c':3}
+
+print(di.get('a'))     	> 1
+di.get('e', 0)	>0
+
+NOTE: The main benefit of this method is that it doesn't throw a traceback whether the key exists or not.
+
+The internal structure is:
+My own hypothesis:
+
+def get(key, default):
+    if key in di.keys():
+        return di[key]
+    else: 
+        return default	

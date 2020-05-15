@@ -1,0 +1,17 @@
+x = 12.2
+Python, find us a spare piece of memory somewhere and
+give it a label of x, and put 12.2 in it
+
+y=14
+And remember that, remember all that stuff.
+That's one of things that Python does for us, it remembers stuff.
+Then we go to the second statement.
+It says oh, hey Python, find some spare memory that you got laying around,
+label it y and put 14 into that
+
+
+x = 100
+hey, x, wait a sec.
+I already told you about x, x already exists so don't go out and
+grab any new memory, but stick 100 in that.
+So 100 goes in and it wipes out the old value

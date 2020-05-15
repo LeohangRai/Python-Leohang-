@@ -1,0 +1,4 @@
+And that's part of the reason that when we do things like dot
+lower on strings we always say it makes a copy of
+the string and gives us back a lowercase copy without changing
+the original string. And that's because strings are not mutable. 
